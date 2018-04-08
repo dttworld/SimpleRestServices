@@ -137,7 +137,7 @@ namespace JSIStudios.SimpleRESTServices.Server
             if (WebOperationContext.Current != null)
                 WebOperationContext.Current.OutgoingResponse.StatusCode = statusCode;
             
-            throw new WebFaultException(statusCode);
+            throw new WebException(statusCode.ToString());
         }
 
         protected virtual void ProcessUnhandledException(Exception ex, Guid requestId)
